@@ -2,9 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  experimental: {
-    sri: { algorithm: "sha384" },
-  },
   async headers() {
     return [
       {
@@ -34,11 +31,11 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self'",
+              "connect-src 'self' https://vitals.vercel-insights.com",
               "frame-src https://open.spotify.com https://www.youtube.com https://youtube.com",
               "media-src 'self' https: blob:",
             ].join("; "),

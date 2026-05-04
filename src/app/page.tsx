@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       {/* ── Hero ── */}
-      <section className="relative min-h-dvh flex flex-col items-center justify-center px-6 overflow-hidden">
+      <section className="relative min-h-[80vh] md:min-h-dvh flex flex-col items-center justify-center py-20 px-6 overflow-hidden">
         {/* Ink textures — background layer */}
         <div className="absolute inset-0 pointer-events-none">
           <Image
