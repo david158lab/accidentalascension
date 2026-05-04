@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  /* Accidental Ascension Brand Colours */
+  --color-magenta: #C7187A;
+  --color-amber: #C8901C;
+  --color-cyan: #1FA3D8;
+  --color-violet: #5B3FB5;
+  --color-silver: #C8CCD0;
+
+  /* Extended gradient stops */
+  --color-royal-blue: #1E5BB8;
+  --color-indigo: #4747B0;
+  --color-deep-purple: #6E3A99;
+  --color-magenta-plum: #B73C7B;
+  --color-coral: #E27840;
+  --color-amber-gold: #ED9A35;
+
+  /* Neutrals */
+  --color-charcoal: #1A1A1A;
+  --color-off-white: #FAFAF7;
+  --color-mid-grey: #6B6B6B;
+
+  /* Font */
+  --font-sans: var(--font-poppins);
+
+  /* Custom animations */
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-fade-in-slow: fadeIn 1.2s ease-out forwards;
+  --animate-scroll-cue: scrollCue 2s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollCue {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(6px); }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection colour matches brand */
+::selection {
+  background-color: #C7187A33;
+  color: inherit;
+}
+
+/* Dark mode selection */
+.dark ::selection {
+  background-color: #C7187A55;
+}

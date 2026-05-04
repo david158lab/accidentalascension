@@ -1,0 +1,11 @@
+name: accidental-ascension
+
+services:
+  accidental-ascension:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: accidental-ascension
+    restart: unless-stopped
+    ports:
+      - "3300:3300"
